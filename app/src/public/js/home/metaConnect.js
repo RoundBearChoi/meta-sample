@@ -15,8 +15,8 @@ function toggleButton() {
 async function connectWithMetaMask() {
     console.log("connecting with metamask");
 
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }).
-        catch((e) => {
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        .catch((e) => {
             console.error(e.message);
             return;
         });
@@ -46,9 +46,7 @@ async function connectWithMetaMask() {
                 } else {
 
                 }
-            })
-
-        //location.href = "/metaConnected";
+            });
     }
 
     // setTimeout(() => {
@@ -57,5 +55,5 @@ async function connectWithMetaMask() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    toggleButton()
+    toggleButton();
 });
