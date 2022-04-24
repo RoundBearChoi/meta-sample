@@ -2,9 +2,14 @@
 
 console.log("running metaConnect.js");
 
-window.userWalletAddress = null
-const loginButton = document.getElementById('loginButton')
-const userWallet = document.getElementById('userWallet')
+window.userWalletAddress = null;
+
+const loginButton = document.getElementById('loginButton');
+const userWallet = document.getElementById('userWallet');
+
+const connectButton = document.getElementById("connectButton");
+
+console.log(connectButton);
 
 function toggleButton() {
     if (!window.ethereum) {
@@ -14,7 +19,8 @@ function toggleButton() {
         return false
     }
 
-    loginButton.addEventListener('click', loginWithMetaMask)
+    //loginButton.addEventListener('click', loginWithMetaMask);
+    connectButton.addEventListener("click", connectWithMetaMask);
 }
 
 async function loginWithMetaMask() {
@@ -33,6 +39,18 @@ async function loginWithMetaMask() {
     setTimeout(() => {
         loginButton.addEventListener('click', signOutOfMetaMask)
     }, 200)
+}
+
+async function connectWithMetaMask() {
+    console.log("connecting with metamask");
+
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }).
+        catch((e) => {
+            console.error(e.message);
+            return;
+        });
+
+    console.log(accounts);
 }
 
 function signOutOfMetaMask() {
