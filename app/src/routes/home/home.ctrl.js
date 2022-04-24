@@ -7,6 +7,9 @@ const output = {
     login: (req, res) => {
         res.render("home/login");
     },
+    metaConnect: (req, res) => {
+        res.render("home/metaConnect");
+    },
 };
 
 const users = {
