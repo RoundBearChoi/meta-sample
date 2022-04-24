@@ -51,12 +51,24 @@ async function connectWithMetaMask() {
         });
 
     if (accounts) {
-        console.log("metamask connected");
-        console.log(accounts);
+        const walletPub = accounts[0];
+        console.log("wallet connected: " + walletPub);
 
         connectButton.removeEventListener('click', loginWithMetaMask)
 
-        location.href = "/metaConnected";
+        const req = {
+            walletAddress: walletPub,
+        };
+
+        fetch("/onWalletConnect", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(req)
+        })
+
+        //location.href = "/metaConnected";
     }
 
     // setTimeout(() => {

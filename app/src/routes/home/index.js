@@ -11,5 +11,6 @@ router.post("/login", ctrl.process.login);
 
 router.get("/metaConnect", ctrl.output.metaConnect);
 router.get("/metaConnected", ctrl.output.metaConnected);
+router.post("/onWalletConnect", ctrl.process.onWalletConnect);
 
 module.exports = router;

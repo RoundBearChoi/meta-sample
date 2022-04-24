@@ -42,6 +42,12 @@ const process = {
             msg: "login failed",
         });
     },
+
+    onWalletConnect: (req, res) => {
+        const address = req.body.walletAddress;
+
+        console.log("incoming wallet address: " + address);
+    },
 };
 
 module.exports = {
