@@ -1,2 +1,1 @@
-## login-lecture
-backend mbg
+## meta-sample
