@@ -67,6 +67,15 @@ async function connectWithMetaMask() {
             },
             body: JSON.stringify(req)
         })
+            .then((res) => res.json())
+            .then((res) => {
+                if (res.success) {
+                    console.log("server responded");
+                    //location.href = "/metaConnected";
+                } else {
+
+                }
+            })
 
         //location.href = "/metaConnected";
     }

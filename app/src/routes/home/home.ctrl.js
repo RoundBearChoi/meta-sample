@@ -47,6 +47,13 @@ const process = {
         const address = req.body.walletAddress;
 
         console.log("incoming wallet address: " + address);
+
+        //need verification
+        if (true) {
+            return res.json({
+                success: true,
+            });
+        }
     },
 };
 
