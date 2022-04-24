@@ -50,7 +50,16 @@ async function connectWithMetaMask() {
             return;
         });
 
-    console.log(accounts);
+    if (accounts) {
+        console.log("metamask connected");
+        console.log(accounts);
+
+        loginButton.removeEventListener('click', loginWithMetaMask)
+    }
+
+    // setTimeout(() => {
+    //     loginButton.addEventListener('click', signOutOfMetaMask)
+    // }, 200);
 }
 
 function signOutOfMetaMask() {
