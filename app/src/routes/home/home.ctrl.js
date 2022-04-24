@@ -12,10 +12,10 @@ const output = {
     },
 };
 
-const users = {
-    id: ["111", "222", "333"],
-    pw: ["111", "222", "333"],
-};
+// const users = {
+//     id: ["111", "222", "333"],
+//     pw: ["111", "222", "333"],
+// };
 
 const process = {
     login: (req, res) => {
@@ -24,15 +24,15 @@ const process = {
 
         console.log(id, pw);
 
-        if (users.id.includes(id)) {
-            const idx = users.id.indexOf(id);
+        // if (users.id.includes(id)) {
+        //     const idx = users.id.indexOf(id);
 
-            if (users.pw[idx] === pw) {
-                return res.json({
-                    success: true,
-                });
-            }
-        }
+        //     if (users.pw[idx] === pw) {
+        //         return res.json({
+        //             success: true,
+        //         });
+        //     }
+        // }
 
         return res.json({
             success: false,
