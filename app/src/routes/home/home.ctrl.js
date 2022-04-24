@@ -1,5 +1,7 @@
 "use strict";
 
+const jwt = require("jsonwebtoken");
+
 const output = {
     home: (req, res) => {
         res.render("home/index");
@@ -45,14 +47,19 @@ const process = {
 
     onWalletConnect: (req, res) => {
         const address = req.body.walletAddress;
-
         console.log("incoming wallet address: " + address);
 
         //need verification
         if (true) {
+            const publicAddress = { publicAddress: address };
+            const t = jwt.sign(publicAddress, "tokenRequired");
+
             return res.json({
                 success: true,
+                token: t,
             });
+        } else {
+
         }
     },
 };

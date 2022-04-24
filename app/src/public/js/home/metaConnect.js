@@ -70,7 +70,7 @@ async function connectWithMetaMask() {
             .then((res) => res.json())
             .then((res) => {
                 if (res.success) {
-                    console.log("server responded");
+                    console.log("token received: " + res.token);
                     //location.href = "/metaConnected";
                 } else {
 
