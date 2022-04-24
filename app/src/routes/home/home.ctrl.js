@@ -10,6 +10,9 @@ const output = {
     metaConnect: (req, res) => {
         res.render("home/metaConnect");
     },
+    metaConnected: (req, res) => {
+        res.render("home/metaConnected");
+    },
 };
 
 // const users = {

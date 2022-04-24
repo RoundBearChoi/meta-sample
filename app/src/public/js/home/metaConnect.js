@@ -55,6 +55,8 @@ async function connectWithMetaMask() {
         console.log(accounts);
 
         connectButton.removeEventListener('click', loginWithMetaMask)
+
+        location.href = "/metaConnected";
     }
 
     // setTimeout(() => {

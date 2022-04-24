@@ -10,5 +10,6 @@ router.get("/login", ctrl.output.login);
 router.post("/login", ctrl.process.login);
 
 router.get("/metaConnect", ctrl.output.metaConnect);
+router.get("/metaConnected", ctrl.output.metaConnected);
 
 module.exports = router;
