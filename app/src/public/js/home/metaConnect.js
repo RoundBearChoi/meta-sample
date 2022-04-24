@@ -54,7 +54,7 @@ async function connectWithMetaMask() {
         console.log("metamask connected");
         console.log(accounts);
 
-        loginButton.removeEventListener('click', loginWithMetaMask)
+        connectButton.removeEventListener('click', loginWithMetaMask)
     }
 
     // setTimeout(() => {
