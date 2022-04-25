@@ -8,3 +8,4 @@ const tokenElement = document.getElementById("playerToken");
 tokenElement.textContent = t;
 
 navigator.clipboard.writeText(t);
+alert("PlayerToken copied!" + "\n" + t);
