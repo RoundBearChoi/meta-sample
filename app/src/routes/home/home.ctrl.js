@@ -17,11 +17,6 @@ const output = {
     },
 };
 
-// const users = {
-//     id: ["111", "222", "333"],
-//     pw: ["111", "222", "333"],
-// };
-
 const process = {
     login: (req, res) => {
         const id = req.body.id;
@@ -29,15 +24,7 @@ const process = {
 
         console.log(id, pw);
 
-        // if (users.id.includes(id)) {
-        //     const idx = users.id.indexOf(id);
-
-        //     if (users.pw[idx] === pw) {
-        //         return res.json({
-        //             success: true,
-        //         });
-        //     }
-        // }
+        //need verification
 
         return res.json({
             success: false,
