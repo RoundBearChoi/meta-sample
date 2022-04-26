@@ -15,20 +15,21 @@ function toggleButton() {
 async function connectWithMetaMask() {
     console.log("connecting with metamask");
 
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
         .catch((e) => {
             console.error(e.message);
             return;
         });
 
     if (accounts) {
-        const walletPub = accounts[0];
-        console.log("wallet connected: " + walletPub);
+        const account = accounts[0];
+        console.log("wallet connected: " + account);
 
         connectButton.removeEventListener('click', connectWithMetaMask)
 
         const req = {
-            walletAddress: walletPub,
+            walletAddress: account,
+            testing: "ggg",
         };
 
         fetch("/onWalletConnect", {
@@ -43,7 +44,7 @@ async function connectWithMetaMask() {
                 if (res.success) {
                     console.log("token received: " + res.token);
                     window.localStorage.setItem("token", res.token);
-                    location.href = "/metaConnected";
+                    //location.href = "/metaConnected";
                 } else {
 
                 }
