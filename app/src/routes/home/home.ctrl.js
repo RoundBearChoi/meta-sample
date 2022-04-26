@@ -41,6 +41,7 @@ const process = {
         console.log("incoming wallet address: " + address);
         console.log("testing string: " + testing);
 
+        //temp projectID
         const web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/bf78d49fb1824455ba8085d9d1d5211f"));
 
         web3.eth.getBalance(address, (err, result) => {
