@@ -1,9 +1,9 @@
 {
-  "name": "login-lecture",
+  "name": "cp1-login",
   "version": "1.0.0",
   "main": "app.js",
   "bin": {
-    "login-lecture": "www.js"
+    "cp1-login": "www.js"
   },
   "dependencies": {
     "@metamask/onboarding": "^1.0.1",
