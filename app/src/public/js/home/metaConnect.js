@@ -44,7 +44,7 @@ async function connectWithMetaMask() {
                 if (res.success) {
                     console.log("token received: " + res.token);
                     window.localStorage.setItem("token", res.token);
-                    //location.href = "/metaConnected";
+                    location.href = "/metaConnected";
                 } else {
 
                 }
