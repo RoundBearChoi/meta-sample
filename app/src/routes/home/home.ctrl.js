@@ -46,13 +46,13 @@ const process = {
 
         web3.eth.getBalance(address, (err, result) => {
             if (err) {
-                console.log("error getting balance: " + err);
+                console.log("error getting eth balance: " + err);
             } else {
-                console.log("balance: " + result);
+                console.log("eth balance: " + result);
 
                 const payload = {
                     publicAddress: address,
-                    balance: result,
+                    eth: result,
                 };
 
                 const t = jwt.sign(payload, "tokenRequired");
