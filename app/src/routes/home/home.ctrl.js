@@ -34,6 +34,8 @@ const process = {
     },
 
     onWalletConnect: (req, res) => {
+        //need verification
+
         const address = req.body.walletAddress;
         const testing = req.body.testing;
         console.log("incoming wallet address: " + address);
