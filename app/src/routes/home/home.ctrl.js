@@ -1,6 +1,7 @@
 "use strict";
 
 const jwt = require("jsonwebtoken");
+const Web3 = require("web3");
 
 const output = {
     home: (req, res) => {
@@ -37,6 +38,17 @@ const process = {
         const testing = req.body.testing;
         console.log("incoming wallet address: " + address);
         console.log("testing string: " + testing);
+
+        const web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/bf78d49fb1824455ba8085d9d1d5211f"));
+
+        web3.eth.getBalance(address)
+            .then((err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("result: " + result);
+                }
+            });
 
         //need verification
         if (true) {
