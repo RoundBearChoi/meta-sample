@@ -41,27 +41,20 @@ const process = {
 
         const web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/bf78d49fb1824455ba8085d9d1d5211f"));
 
-        web3.eth.getBalance(address)
-            .then((err, result) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("result: " + result);
-                }
-            });
+        web3.eth.getBalance(address, (err, result) => {
+            if (err) {
+                console.log("error getting balance: " + err);
+            } else {
+                console.log("balance: " + result);
 
-        //need verification
-        if (true) {
-            const publicAddress = { publicAddress: address };
-            const t = jwt.sign(publicAddress, "tokenRequired");
+                const t = jwt.sign(address, "tokenRequired");
 
-            return res.json({
-                success: true,
-                token: t,
-            });
-        } else {
-
-        }
+                return res.json({
+                    success: true,
+                    token: t,
+                });
+            }
+        });
     },
 };
 
