@@ -49,7 +49,12 @@ const process = {
             } else {
                 console.log("balance: " + result);
 
-                const t = jwt.sign(address, "tokenRequired");
+                const payload = {
+                    publicAddress: address,
+                    balance: result,
+                };
+
+                const t = jwt.sign(payload, "tokenRequired");
 
                 return res.json({
                     success: true,
