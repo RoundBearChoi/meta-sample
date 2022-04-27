@@ -16,6 +16,9 @@ const output = {
     metaConnected: (req, res) => {
         res.render("home/metaConnected");
     },
+    sendEthSample: (req, res) => {
+        res.render("home/sendEthSample");
+    },
 };
 
 const process = {
