@@ -27,7 +27,7 @@ function getStringAmount(eth) {
 function sendEth(accountFrom) {
     console.log("attempting transaction from: " + accountFrom);
 
-    const sendAmount = getStringAmount(0.01);
+    const sendAmount = getStringAmount(0.001);
 
     ethereum
         .request({
@@ -35,7 +35,7 @@ function sendEth(accountFrom) {
             params: [
                 {
                     from: accountFrom,
-                    to: "0x50A33818aCa4833A22C299ae45B885f2A7ca0E13",
+                    to: "0x4a2c2062C40FE16830b41D754e6aB5dadc1ebB15",
                     value: sendAmount,
                     //gasPrice: "0x09184e72a000",
                     //gas: "0x2710",
